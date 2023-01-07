@@ -1,0 +1,457 @@
+-- Instances:
+local UserInputService = game:GetService("UserInputService")
+
+function onKeyPress(inputObject, gameProcessedEvent)
+	if not gameProcessedEvent then
+		if inputObject.KeyCode == Enum.KeyCode.KeypadPlus then
+			if  game.CoreGui.SynapseX.Enabled == false then
+				game.CoreGui.SynapseX.Enabled = true
+			else
+				game.CoreGui.SynapseX.Enabled = false
+			end
+		end
+	end
+end
+
+UserInputService.InputBegan:Connect(onKeyPress)
+-------------------------------------------------------------
+local SynapseX = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local Check = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local CopyButton = Instance.new("TextButton")
+local PasteButton = Instance.new("TextButton")
+local ExecuteFile = Instance.new("TextButton")
+local ScriptHub = Instance.new("TextButton")
+local Attach = Instance.new("TextButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local _10 = Instance.new("TextButton")
+local _11 = Instance.new("TextButton")
+local _4 = Instance.new("TextButton")
+local _8 = Instance.new("TextButton")
+local _1 = Instance.new("TextButton")
+local _5 = Instance.new("TextButton")
+local _7 = Instance.new("TextButton")
+local _6 = Instance.new("TextButton")
+local _2 = Instance.new("TextBox")
+local _9 = Instance.new("TextButton")
+local _3 = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Title2 = Instance.new("TextLabel")
+local ScrollingFrameExe = Instance.new("ScrollingFrame")
+local TextBox = Instance.new("TextBox")
+local LineScrollingFrame = Instance.new("ScrollingFrame")
+local LineTextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+SynapseX.Name = "SynapseX"
+syn.protect_gui(SynapseX) -- You should call protect_gui before your GUI is parented.
+SynapseX.Parent = game:GetService("CoreGui")
+SynapseX.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = SynapseX
+Main.Active = true
+Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Main.BorderSizePixel = 0
+Main.Draggable = true
+Main.Position = UDim2.new(0.367039055, -229, 0.15636605, 25)
+Main.Selectable = true
+Main.Size = UDim2.new(0, 579, 0, 278)
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+Frame.BorderSizePixel = 0
+Frame.Size = UDim2.new(0, 579, 0, 29)
+
+Check.Parent = Frame
+Check.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Check.BackgroundTransparency = 1.000
+Check.Position = UDim2.new(0.0294297822, 0, -0.019900497, 0)
+Check.Size = UDim2.new(0, 14, 0, 19)
+Check.Font = Enum.Font.SourceSans
+Check.Text = "false"
+Check.TextColor3 = Color3.fromRGB(255, 85, 0)
+Check.TextScaled = true
+Check.TextSize = 14.000
+Check.TextTransparency = 1.000
+Check.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0294297822, 0, -0.019900497, 0)
+TextLabel_2.Size = UDim2.new(0, 14, 0, 19)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "x"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 85, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Size = UDim2.new(0, 24, 0, 27)
+TextLabel_3.Font = Enum.Font.ArialBold
+TextLabel_3.Text = "S"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+Execute.Name = "Execute"
+Execute.Parent = Main
+Execute.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.0182149354, 0, 0.889593661, 0)
+Execute.Size = UDim2.new(0, 70, 0, 26)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 14.000
+
+Clear.Name = "Clear"
+Clear.Parent = Main
+Clear.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.156648457, 0, 0.889593661, 0)
+Clear.Size = UDim2.new(0, 70, 0, 26)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clear.TextSize = 14.000
+
+CopyButton.Name = "Copy"
+CopyButton.Parent = Main
+CopyButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+CopyButton.BorderSizePixel = 0
+CopyButton.Position = UDim2.new(0.298724949, 0, 0.889593661, 0)
+CopyButton.Size = UDim2.new(0, 70, 0, 26)
+CopyButton.Font = Enum.Font.SourceSans
+CopyButton.Text = "Copy"
+CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyButton.TextSize = 14.000
+
+PasteButton.Name = "PasteButton"
+PasteButton.Parent = Main
+PasteButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+PasteButton.BorderSizePixel = 0
+PasteButton.Position = UDim2.new(0.435336977, 0, 0.889593661, 0)
+PasteButton.Size = UDim2.new(0, 70, 0, 26)
+PasteButton.Font = Enum.Font.SourceSans
+PasteButton.Text = "Paste"
+PasteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PasteButton.TextSize = 14.000
+
+ExecuteFile.Name = "Execute File"
+ExecuteFile.Parent = Main
+ExecuteFile.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+ExecuteFile.BorderSizePixel = 0
+ExecuteFile.Position = UDim2.new(0.573770523, 0, 0.889593661, 0)
+ExecuteFile.Size = UDim2.new(0, 70, 0, 26)
+ExecuteFile.Font = Enum.Font.SourceSans
+ExecuteFile.Text = "Execute File"
+ExecuteFile.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteFile.TextSize = 14.000
+
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Parent = Main
+ScriptHub.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+ScriptHub.BorderSizePixel = 0
+ScriptHub.Position = UDim2.new(0.820431232, 0, 0.889593661, 0)
+ScriptHub.Size = UDim2.new(0, 88, 0, 26)
+ScriptHub.Font = Enum.Font.SourceSans
+ScriptHub.Text = "ScriptHub"
+ScriptHub.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptHub.TextSize = 14.000
+
+Attach.Name = "Attach"
+Attach.Parent = Main
+Attach.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+Attach.BorderSizePixel = 0
+Attach.Position = UDim2.new(0.712203979, 0, 0.889593661, 0)
+Attach.Size = UDim2.new(0, 52, 0, 26)
+Attach.Font = Enum.Font.SourceSans
+Attach.Text = "Attach"
+Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
+Attach.TextSize = 14.000
+
+ScrollingFrame.Parent = Main
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.771399021, 0, 0.133093521, 0)
+ScrollingFrame.Size = UDim2.new(0, 117, 0, 192)
+ScrollingFrame.ScrollBarThickness = 0
+
+_10.Name = "10"
+_10.Parent = ScrollingFrame
+_10.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_10.BorderSizePixel = 0
+_10.Position = UDim2.new(0, 0, 0.273381293, 0)
+_10.Size = UDim2.new(0, 117, 0, 19)
+_10.Font = Enum.Font.Code
+_10.Text = ""
+_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+_10.TextSize = 14.000
+
+_11.Name = "11"
+_11.Parent = ScrollingFrame
+_11.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_11.BorderSizePixel = 0
+_11.Position = UDim2.new(0, 0, 0.307553977, 0)
+_11.Size = UDim2.new(0, 117, 0, 19)
+_11.Font = Enum.Font.Code
+_11.Text = ""
+_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+_11.TextSize = 14.000
+
+_4.Name = "4"
+_4.Parent = ScrollingFrame
+_4.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_4.BorderSizePixel = 0
+_4.Position = UDim2.new(0, 0, 0.341726631, 0)
+_4.Size = UDim2.new(0, 117, 0, 19)
+_4.Font = Enum.Font.Code
+_4.Text = " "
+_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+_4.TextSize = 14.000
+
+_8.Name = "8"
+_8.Parent = ScrollingFrame
+_8.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_8.BorderSizePixel = 0
+_8.Position = UDim2.new(0, 0, 0.136690646, 0)
+_8.Size = UDim2.new(0, 117, 0, 19)
+_8.Font = Enum.Font.Code
+_8.Text = " "
+_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+_8.TextSize = 14.000
+
+_1.Name = "1"
+_1.Parent = ScrollingFrame
+_1.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_1.BorderSizePixel = 0
+_1.Size = UDim2.new(0, 117, 0, 19)
+_1.Font = Enum.Font.Code
+_1.Text = "Loop: Off"
+_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+_1.TextSize = 14.000
+
+_5.Name = "5"
+_5.Parent = ScrollingFrame
+_5.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_5.BorderSizePixel = 0
+_5.Position = UDim2.new(0, 0, 0.170863315, 0)
+_5.Size = UDim2.new(0, 117, 0, 19)
+_5.Font = Enum.Font.Code
+_5.Text = " "
+_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+_5.TextSize = 14.000
+
+_7.Name = "7"
+_7.Parent = ScrollingFrame
+_7.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_7.BorderSizePixel = 0
+_7.Position = UDim2.new(0, 0, 0.239208624, 0)
+_7.Size = UDim2.new(0, 117, 0, 19)
+_7.Font = Enum.Font.Code
+_7.Text = " "
+_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+_7.TextSize = 14.000
+
+_6.Name = "6"
+_6.Parent = ScrollingFrame
+_6.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_6.BorderSizePixel = 0
+_6.Position = UDim2.new(0, 0, 0.20503597, 0)
+_6.Size = UDim2.new(0, 117, 0, 19)
+_6.Font = Enum.Font.Code
+_6.Text = " "
+_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+_6.TextSize = 14.000
+
+_2.Name = "2"
+_2.Parent = ScrollingFrame
+_2.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0, 0, 0.0341726616, 0)
+_2.Size = UDim2.new(0, 117, 0, 19)
+_2.Font = Enum.Font.Code
+_2.Text = "0.1"
+_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+_2.TextSize = 14.000
+
+_9.Name = "9"
+_9.Parent = ScrollingFrame
+_9.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_9.BorderSizePixel = 0
+_9.Position = UDim2.new(0, 0, 0.102517985, 0)
+_9.Size = UDim2.new(0, 117, 0, 19)
+_9.Font = Enum.Font.Code
+_9.Text = " "
+_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+_9.TextSize = 14.000
+
+_3.Name = "3"
+_3.Parent = ScrollingFrame
+_3.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+_3.BorderSizePixel = 0
+_3.Position = UDim2.new(0, 0, 0.0683453232, 0)
+_3.Size = UDim2.new(0, 117, 0, 19)
+_3.Font = Enum.Font.Code
+_3.Text = " "
+_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+_3.TextSize = 14.000
+_3.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.973471522, 0, 0.00359712238, 0)
+Close.Size = UDim2.new(0, 15, 0, 17)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+Title2.Name = "Title2"
+Title2.Parent = Main
+Title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title2.BackgroundTransparency = 1.000
+Title2.Position = UDim2.new(0.31693989, 0, 0, 0)
+Title2.Size = UDim2.new(0, 200, 0, 29)
+Title2.Font = Enum.Font.SourceSans
+Title2.Text = "Synapse X - v2"
+Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextSize = 14.000
+
+ScrollingFrameExe.Name = "ScrollingFrameExe"
+ScrollingFrameExe.Parent = Main
+ScrollingFrameExe.Active = true
+ScrollingFrameExe.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+ScrollingFrameExe.BorderSizePixel = 0
+ScrollingFrameExe.Position = UDim2.new(0.0599999987, 0, 0.134000003, 0)
+ScrollingFrameExe.Size = UDim2.new(0, 400, 0, 200)
+ScrollingFrameExe.CanvasSize = UDim2.new(1, 100, 1, 100)
+
+TextBox.Parent = ScrollingFrameExe
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.Size = UDim2.new(0, 419, 0, 203)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.MultiLine = true
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 16.000
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
+
+LineScrollingFrame.Name = "LineScrollingFrame"
+LineScrollingFrame.Parent = Main
+LineScrollingFrame.Active = true
+LineScrollingFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+LineScrollingFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+LineScrollingFrame.BorderSizePixel = 0
+LineScrollingFrame.Position = UDim2.new(0, 5, 0.133000001, 0)
+LineScrollingFrame.Size = UDim2.new(0, 30, 0, 200)
+LineScrollingFrame.ZIndex = 1111
+LineScrollingFrame.ScrollBarThickness = 0
+
+
+LineTextLabel.Name = "LineTextLabel"
+LineTextLabel.Parent = LineScrollingFrame
+LineTextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LineTextLabel.BackgroundTransparency = 1.000
+LineTextLabel.Size = UDim2.new(0, 28, 0, 560)
+LineTextLabel.ZIndex = 9999
+LineTextLabel.Font = Enum.Font.SourceSans
+LineTextLabel.Text = "1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23      24      25      26      27      28      29      30      31      32      33      34      35"
+LineTextLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+LineTextLabel.TextSize = 16.300 --menor lado maior meio, maior lado, menor meio
+LineTextLabel.TextWrapped = true
+LineTextLabel.TextXAlignment = Enum.TextXAlignment.Right
+LineTextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+--Scripts:
+
+-------------------------------------------------------------
+Attach.MouseButton1Click:Connect(function()
+	if Check.Text == "true" then
+		Title2.Text = "Synapse X - v2: (Already Injected!)"
+		wait(5)
+		Title2.Text = "Synapse X - v2"
+	end
+	if Check.Text == "false" then
+		Title2.Text = "Synapse X - v2: (Checking...)"
+		wait(1)
+		Title2.Text = "Synapse X - v2: (Updating...)"
+		wait(2)
+		Title2.Text = "Synapse X - v2: (Injecting...)"
+		wait(3)
+		Title2.Text = "Synapse X - v2: (Checking Whitelist...)"
+		wait(4)
+		Title2.Text = "Synapse X - v2: (Scanning Errors...)"
+		wait(3)
+		Title2.Text = "Synapse X - v2: (Nothing Found, Ready!)"
+		wait(2)
+		Title2.Text = "Synapse X - v2"
+		Check.Text = "true"
+	end
+end)
+-------------------------------------------------------------
+Close.MouseButton1Down:connect(function()
+	local ScreenGui = SynapseX.Parent
+	SynapseX:Destroy()
+end)
+-------------------------------------------------------------
+Clear.MouseButton1Click:Connect(function()
+	SynapseX.Main.ScrollingFrameExe.TextBox.Text = ""
+end)
+-------------------------------------------------------------
+Execute.MouseButton1Down:connect(function()
+	local script = TextBox.Text
+	loadstring(string.format("%s", script))()
+end)
+-------------------------------------------------------------
+local Loop = false
+
+_1.MouseButton1Click:Connect(function()
+	if Loop then
+		Loop = false
+		_1.Text = "Loop: Off"
+	else
+		Loop = true
+		_1.Text = "Loop: On"
+		while Loop do
+			local StringValue = _2.Text
+			wait(tonumber(StringValue))
+			local script = TextBox.Text
+			loadstring(string.format("%s", script))()
+		end
+	end
+end)
+-------------------------------------------------------------
+CopyButton.MouseButton1Click:Connect(function()
+	setclipboard(TextBox.Text)
+end)
+-------------------------------------------------------------
+PasteButton.MouseButton1Click:Connect(function()
+	print("Trying to Paste? Here dont have malicious scripts LOL")
+end)
+-------------------------------------------------------------
+ExecuteFile.MouseButton1Click:Connect(function()
+	print("Trying to add Execute File for this Executor but no progress :/")
+end)
